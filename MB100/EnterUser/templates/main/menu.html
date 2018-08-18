@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> 顶部导航</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css"/>   <!-- 下面的样式，仅是为了显示代码，而不应该在项目中使用-->
+    <link href="../assets/css/prettify.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+    code {
+      padding: 0px 4px;
+      color: #d14;
+      background-color: #f7f7f9;
+      border: 1px solid #e1e1e8;
+    }
+    .right{
+        width:70%;
+        border:0;
+        cellpadding:0;
+        cellspacing:0;
+    }
+    .right TD{
+        height:10px;
+    }
+    </style>
+    <script type="text/javascript">
+        function RecruitmentOnes(data){
+            <!--alert(location);-->
+            <!--parent.RecruitmentOne();-->
+            <!--location='../RecruitmentOne?invtId='+data-->
+            <!--window.frames["detail"].document.getElementById("example").click();-->
+
+            top.topManager.openPage({
+            id : 'test1',
+            href : '../RecruitmentOne?invtId='+data,
+            title : '详情页'
+          });
+
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+<div width="70%" align="center" height="100%">
+    <TABLE width="70%" border="0" align="center" cellpadding="0" cellspacing="0" height="8%">
+        <TBODY>
+        <TR>
+            <TD width="40%" align="left" class="text_18bblue">招募专栏</TD>
+            <TD width="60%" align="right" valign="bottom" class="text3">&nbsp;</TD>
+        </TR>
+        <TR>
+            <TD height="1" colspan="2" bgcolor="#a7bccd">
+        </TR>
+        </TBODY>
+    </TABLE>
+
+    <TABLE width="70%" border="0" align="center" cellpadding="0" cellspacing="0" height="20%">
+        <TBODY>
+        <TR>
+            <TD><IMG src="../static/image/zm_img.gif" width="726" height="80" vspace="7"></TD>
+        </TR>
+        </TBODY>
+    </TABLE>
+    <TABLE width="70%" border="0" align="center" cellpadding="0" cellspacing="0" height="2%">
+        <TBODY>
+        <TR>
+            <TD height="8">
+        </TR>
+        </TBODY>
+    </TABLE>
+    <TABLE class="right">
+        <TBODY>
+        {% for CoInvtInfs in CoInvtInf %}
+
+        <TR padding="0">
+            <TD align="left" valign="top" class="text" title="">·<A
+                    href="javascript:RecruitmentOnes({{CoInvtInfs.0}})"
+                    target="_blank">{{CoInvtInfs.1}}</A>
+            </TD>
+            <TD align="right" valign="top" class="text">{{CoInvtInfs.3}}</TD>
+        </TR>
+        {% endfor %}
+
+        </TBODY>
+    </TABLE>
+
+    </TD>
+    </TR>
+    </TBODY></TABLE>
+    <TABLE width="70%" border="0" align="center" cellpadding="0" cellspacing="0" height="2%">
+        <TBODY>
+        <TR>
+            <TD height="8">
+        </TR>
+        </TBODY>
+    </TABLE>
+    <TABLE width="70%" border="0" align="center" cellpadding="0" cellspacing="0" height="8%">
+        <TBODY>
+        <TR>
+            <TD width="419" align="center" background="../static/image/bottom_bg.gif" class="text"><A
+                    href="http://www.hezuo100.com:8099/cmip/face/about_us.jsp" target="_blank">关于我们</A> | <A
+                    href="http://www.hezuo100.com:8099/cmip/face/dh.jsp" target="_blank">网站导航</A> | 服务热线10086
+            </TD>
+            <TD width="137"><IMG src="../static/image/bottom_logo.gif" width="193" height="44"></TD>
+            <TD width="388" align="center" background="../static/image/bottom_bg.gif" class="text">中国移动通信版权所有</TD>
+        </TR>
+        </TBODY>
+    </TABLE>
+</div>
+<body>
+</html>  

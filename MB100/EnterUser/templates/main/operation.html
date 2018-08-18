@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html xmlns:padding-top="http://www.w3.org/1999/xhtml">
+<head>
+    <title> 常见页面操作</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css"/>   <!-- 下面的样式，仅是为了显示代码，而不应该在项目中使用-->
+    <link href="../assets/css/prettify.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+    code {
+      padding: 0px 4px;
+      color: #d14;
+      background-color: #f7f7f9;
+      border: 1px solid #e1e1e8;
+    }
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<table width="70%" align="center" bgcolor="#c8dced" border="1px"
+       cellpadding="0" cellspacing="1">
+    <tbody>
+    <tr>
+        <td class="td_title" width="12%" align="center">排名</td>
+        <td class="td_title" width="43%" align="center">用户名称</td>
+        <td class="td_title" width="32%" align="center"> 积分</td>
+    </tr>
+    <!--{% block article %}-->
+    {% for item in coComUser %}
+
+    <tr style="padding-top:10px">
+        <td class="td_title" width="12%" align="center">{{item.userId}}</td>
+
+        <td class="td_title" width="43%" align="center">{{item.userName}}</td>
+        <td class="td_title" width="32%" align="center">{{item.score}}</td>
+    </tr>
+    {% endfor %}
+    <!--{% endblock %}-->
+
+
+    <input name="i" value="13" type="hidden">
+
+    </tbody>
+</table>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript">
+    BUI.use('common/page');
+
+
+
+
+
+
+
+
+</script>
+<!-- 仅仅为了显示代码使用，不要在项目中引入使用-->
+<script type="text/javascript" src="../assets/js/prettify.js"></script>
+<script type="text/javascript">
+    $(function () {
+      prettyPrint();
+    });
+
+
+
+
+
+
+
+
+</script>
+<script type="text/javascript">
+  $('#J_OpenMenu').click(function(e){
+    e.preventDefault();
+    if(top.topManager){
+      //打开左侧菜单中配置过的页面
+      top.topManager.openPage({
+        id : 'main-menu',
+        search : 'a=123&b=456',
+        reload : true
+      });
+    }
+  });
+
+  $('#J_OpenRelative').click(function(e){
+    e.preventDefault();
+    if(top.topManager){
+      //打开左侧菜单中配置过的页面
+      top.topManager.openPage({
+        id : 'test1',
+        href : 'main/test.html',
+        title : '相对地址页面'
+      });
+    }
+  });
+
+  $('#J_OpenAbsolute').click(function(e){
+    e.preventDefault();
+    if(top.topManager){
+
+       top.topManager.openPage({
+        id : 'baidu',
+        href : 'http://www.baidu.com',
+        title : '百度页面'
+      });
+    }
+  });
+
+  $('#J_Refresh').click(function(e){
+    e.preventDefault();
+    if(top.topManager){
+      top.topManager.reloadPage();
+    }
+  });
+
+  $('#J_RefreshOther').click(function(e){
+    e.preventDefault();
+    if(top.topManager){
+      top.topManager.reloadPage('main-menu');
+    }
+  });
+  $('#J_Close').click(function(e){
+    e.preventDefault();
+    if(top.topManager){
+      top.topManager.closePage();
+    }
+  });
+
+  $('#J_CloseOther').click(function(e){
+    e.preventDefault();
+    if(top.topManager){
+      top.topManager.closePage('main-menu');
+    }
+  });
+
+  $('#J_OpenAndClose').click(function(e){
+    e.preventDefault();
+    if(top.topManager){
+      top.topManager.openPage({
+        id : 'main-menu',
+        isClose : true
+      });
+    }
+  });
+
+  $('#btnTitle').click(function(){
+    if(top.topManager){
+      top.topManager.setPageTitle($('#txtTitle').val());
+    }
+  });
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+</html>  

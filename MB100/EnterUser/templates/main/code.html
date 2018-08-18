@@ -1,0 +1,1037 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=x-gbk">
+    <meta name="keywords" content="合作100">
+    <title>合作100资源把控管理平台</title>
+    <link href="../static/image/hzgl.css" rel="stylesheet" type="text/css">
+    <link href="../static/image/cehui.css" rel="stylesheet" type="text/css">
+
+    <!-- 活动图片变幻效果 -->
+    <script type="text/JavaScript">
+var cpAD = new Array(); //图片路径
+var cpADlink = new Array(); //连接地址
+var altValue = new Array(); //活动名称
+var infoValue = new Array(); //活动信息
+var actCount = 0; //活动总数
+var adNum = 0; //当前活动
+var theTimer; //定时器
+var noImgs = new Array();
+var selNoImgs = new Array();
+
+
+cpAD[0] = "/cmip/face/upload/12488535901876507268.jpg";
+new Image().src = "/cmip/face/upload/12488535901876507268.jpg"; //预加载图片
+cpADlink[0] = "#";
+altValue[0] = "欢迎试用";
+infoValue[0] = "欢迎试用";
+
+cpAD[1] = "/cmip/face/upload/12556750480622881248.gif";
+new Image().src = "/cmip/face/upload/12556750480622881248.gif"; //预加载图片
+cpADlink[1] = "#";
+altValue[1] = "合作100";
+infoValue[1] = "合作100";
+
+actCount = 2;
+
+
+//初始化数字图片
+for(var i=0; i<actCount; i++){
+	var img = new Image();
+	img.src = "/cmip/face/images/page2_0" + (i+1) + ".gif";
+	img.style.width = 16;
+	img.style.height = 13;
+	img.no = i;
+	img.onmouseover=function(){changeimg(this.no);};
+	noImgs[i] = img;
+	var img2 = new Image();
+	img2.src = "/cmip/face/images/page_0" + (i+1) + ".gif";
+	img2.style.width = 16;
+	img2.style.height = 13;
+	img2.no = i;
+	img2.onmouseover=function(){changeimg(this.no);};
+	selNoImgs[i] = img2;
+}
+
+function jump2url() {
+	var jumpUrl = cpADlink[adNum-1];
+	if(jumpUrl != ''){
+		window.open(jumpUrl, "_blank");
+	}
+}
+function changeimg(n) {
+	adNum = n;
+    window.clearInterval(theTimer);
+    nextAd();
+}
+function nextAd(){
+
+	if(adNum > cpAD.length-1)
+		adNum = 0;
+
+	NO_IMG.innerHTML = "";
+	for(var i=0; i<actCount; i++){
+		if(i == adNum)
+			document.getElementById("NO_IMG").appendChild(selNoImgs[i]);
+		else
+			document.getElementById("NO_IMG").appendChild(noImgs[i]);
+	}
+
+	setTransition();
+
+	document.images.cpADrush.src = cpAD[adNum];
+	document.getElementById("titleShowX").title = altValue[adNum];
+	document.images.cpADrush.alt = altValue[adNum];
+
+	if(infoValue[adNum].length > 60){
+  		infoValue[adNum] = infoValue[adNum].substr(0,60) + "...";
+	}
+
+	if(infoValue[adNum] == 'null'){
+  		infoValue[adNum] = "";
+	}
+
+	document.getElementById("titleShowX").innerText = infoValue[adNum];
+	document.getElementById("titleShowX").href = cpADlink[adNum];
+
+	adNum++ ;
+	playTransition();
+	theTimer=setTimeout("nextAd()", 5000);
+}
+function setTransition(){
+	if(document.all){
+		document.cpADrush.filters.revealTrans.Transition=23;
+		document.cpADrush.filters.revealTrans.apply();
+	}
+}
+function playTransition(){
+	if(document.all)
+		document.cpADrush.filters.revealTrans.play();
+}
+function _to(){
+	document.location.href="/cmip/face/ywdt.jsp";
+}
+function _to_1(){
+	document.location.href="/cmip/face/zmzl.jsp";
+}
+function _to_2(){
+	document.location.href="/cmip/face/ydzc.jsp";
+}
+
+function _to_3(){
+	document.location.href="/cmip/face/connect/ywgg_content.jsp";
+}
+function _to_4(){
+	document.location.href="/cmip/face/connect/xtgg_content.jsp";
+}
+function _to_5(){
+	document.location.href="/cmip/face/connect/zlxz_content.jsp";
+}
+function _to_6(){
+	document.location.href="/cmip/face/bbs.jsp";
+}
+function _to_7(){
+	document.location.href="/cmip/face/bbs.jsp";
+}
+function _to_8(){
+	document.location.href="/cmip/face/bbs.jsp";
+}
+function _to_9(){
+	document.location.href="/cmip/face/bbs.jsp";
+}
+function _to_10(){
+	document.location.href="/cmip/face/jfly.jsp";
+}
+
+function shousuoCommit(){
+	var searchKey=document.getElementById("sh_key");
+	if(searchKey.value==""){
+		alert("搜索关键字不可为空！");
+		searchKey.focus();
+		searchKey.value="";
+		return;
+     }
+
+	document.location.href="/cmip/face/search_2.jsp?searchKey="+searchKey;
+}
+
+
+
+    </script>
+</head>
+<body onload="changeimg(0)">
+
+
+<table width="96%" align="center" border="0" cellpadding="0"
+       cellspacing="0">
+    <tbody>
+    <tr>
+        <td height="8"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="944" align="center" border="0" cellpadding="0"
+       cellspacing="0">
+    <tbody>
+    <tr>
+        <td valign="top" width="210">
+            <table width="210" align="center"
+                   border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td width="10" align="left"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_01.gif" width="8" height="30"></td>
+                    <td class="text_12bblue" width="192" align="left"
+                        background="../static/image/t_03.gif">
+                        <table width="100%" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td align="left">公告</td>
+                                <td align="right"><a
+                                        href="http://www.hezuo100.com:8099/cmip/face/ywgg_list_2.jsp"
+                                        target="_blank"><img src="../static/image/more.gif" alt="更多"
+                                                             width="23" border="0" height="5"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="10" align="right"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_02.gif" width="8" height="30"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table_line" width="210" align="center" border="0"
+                   cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td valign="top" height="216">
+                        <table width="96%"
+                               align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0" cellpadding="0"
+                               cellspacing="0">
+
+                            <tbody>
+                            <tr>
+                                <td class="text" title="关于2010年3月合作伙伴自主发起创新方案的选验结果公告"
+                                    align="left" height="20">·
+                                    <a title="关于2010年3月合作伙伴自主发起创新方案的选验结果公告"
+                                       href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=1&amp;url=/html/2010/4/14/20100414145118.html&amp;id=175637502159095130"
+                                       target="_blank">关于2010年3月合作伙伴自主发起创新方案的选验结果公告</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年第二季度手机报交叉营销合作方案招募响应方案的选验结果"
+                                    align="left" height="20">·
+                                    <a title="2010年第二季度手机报交叉营销合作方案招募响应方案的选验结果"
+                                       href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=1&amp;url=/html/2010/4/14/20100414115748.html&amp;id=17088171702999509726"
+                                       target="_blank">2010年第二季度手机报交叉营销合作方案招募响应方案的选验结...</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年4月份张信哲演唱会门票采购招募响应方案的选验结果"
+                                    align="left" height="20">·
+                                    <a title="2010年4月份张信哲演唱会门票采购招募响应方案的选验结果"
+                                       href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=1&amp;url=/html/2010/4/9/20100409152429.html&amp;id=9786919328161816110"
+                                       target="_blank">2010年4月份张信哲演唱会门票采购招募响应方案的选验结果</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="关于2010年2月合作伙伴自主发起创新方案的选验结果公告"
+                                    align="left" height="20">·
+                                    <a title="关于2010年2月合作伙伴自主发起创新方案的选验结果公告"
+                                       href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=1&amp;url=/html/2010/4/9/20100409152322.html&amp;id=978021771800865199"
+                                       target="_blank">关于2010年2月合作伙伴自主发起创新方案的选验结果公告</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0" cellpadding="0"
+                               cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td valign="top" width="367" align="right">
+            <table width="359"
+                   border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td width="10" align="left"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_01.gif" width="8" height="30"></td>
+                    <td class="text_12bblue" width="338" align="left"
+                        background="../static/image/t_03.gif">
+                        <table width="97%" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td width="73%" align="left">招募信息</td>
+                                <td width="27%" align="right"><a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_2.jsp" target="_blank"><img
+                                        src="../static/image/more.gif" alt="更多" width="23" border="0"
+                                        height="5"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="11" align="right"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_02.gif" width="8" height="30"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table_line" width="359" border="0" cellpadding="0"
+                   cellspacing="0">
+                <tbody>
+                <tr>
+                    <td valign="top" height="216">
+                        <table width="96%"
+                               align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+
+                            <tbody>
+                            <tr>
+                                <td class="text" title="2010校园应用培训计划" align="left"
+                                    height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=52875046123879041654"
+                                        target="_blank">2010校园应用培训计划</a><img src="../static/image/new.gif"
+                                                                             width="22" align="absmiddle" height="11"
+                                                                             hspace="2"></td>
+                                <td class="text" title="2010校园应用培训计划" align="left"
+                                    height="20">2010-04-13
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010佛山移动网络创业营销支撑"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=01208958345510352467"
+                                        target="_blank">2010佛山移动网络创业营销支撑</a><img
+                                        src="../static/image/new.gif" width="22" align="absmiddle" height="11"
+                                        hspace="2"></td>
+                                <td class="text" title="2010佛山移动网络创业营销支撑" align="left"
+                                    height="20">2010-04-09
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年5-6月社会渠道推广歌单招募"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=25609437351807515967"
+                                        target="_blank">2010年5-6月社会渠道推广歌单招募</a></td>
+                                <td class="text" title="2010年5-6月社会渠道推广歌单招募"
+                                    align="left" height="20">2010-04-13
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年第二季度手机报交叉营销合作方案招募"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=73470109498653889359"
+                                        target="_blank">2010年第二季度手机报交叉营销合作方案...</a></td>
+                                <td class="text" title="2010年第二季度手机报交叉营销合作方案招募"
+                                    align="left" height="20">2010-03-12
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年4月份张信哲演唱会门票采购"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=97498789678682345044"
+                                        target="_blank">2010年4月份张信哲演唱会门票采购</a></td>
+                                <td class="text" title="2010年4月份张信哲演唱会门票采购"
+                                    align="left" height="20">2010-03-03
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年3-4月社会渠道推广歌单招募"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=85027986952527629811"
+                                        target="_blank">2010年3-4月社会渠道推广歌单招募</a></td>
+                                <td class="text" title="2010年3-4月社会渠道推广歌单招募"
+                                    align="left" height="20">2010-02-09
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年佛山移动1+1联合电话营销项目招募"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=53456906616988319888"
+                                        target="_blank">2010年佛山移动1+1联合电话营销项目...</a></td>
+                                <td class="text" title="2010年佛山移动1+1联合电话营销项目招募"
+                                    align="left" height="20">2010-01-22
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="移动应用商城新春主题营销" align="left"
+                                    height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=63752718533750923939"
+                                        target="_blank">移动应用商城新春主题营销</a></td>
+                                <td class="text" title="移动应用商城新春主题营销" align="left"
+                                    height="20">2009-12-21
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年1-2月社会渠道推广歌单招募"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=94702743699447993425"
+                                        target="_blank">2010年1-2月社会渠道推广歌单招募</a></td>
+                                <td class="text" title="2010年1-2月社会渠道推广歌单招募"
+                                    align="left" height="20">2009-12-11
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="2010年第四届校园巡演活动公开招募"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zmzl_show.jsp?invtId=99651634384694817599"
+                                        target="_blank">2010年第四届校园巡演活动公开招募</a></td>
+                                <td class="text" title="2010年第四届校园巡演活动公开招募"
+                                    align="left" height="20">2009-12-11
+                                </td>
+                            </tr>
+
+
+                            <tr style="display: none;">
+                                <td class="text" align="left" height="20">·欢乐在线
+                                    欢乐惊喜欢乐惊喜欢乐惊喜欢乐惊喜欢乐惊喜<img src="../static/image/hot.gif" width="22"
+                                                             align="absmiddle" height="11" hspace="2"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0" cellpadding="0"
+                               cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td valign="top" width="367" align="right">
+            <table width="359"
+                   border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td width="10" align="left"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_01.gif" width="8" height="30"></td>
+                    <td class="text_12bblue" width="338" align="left"
+                        background="../static/image/t_03.gif">
+                        <table width="97%" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td width="73%" align="left">最新政策</td>
+                                <td width="27%" align="right"><a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zxzc_list_2.jsp"
+                                        target="_blank"><img src="../static/image/more.gif" alt="更多"
+                                                             width="23" border="0" height="5"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="11" align="right"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_02.gif" width="8" height="30"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table_line" width="359" border="0" cellpadding="0"
+                   cellspacing="0">
+                <tbody>
+                <tr>
+                    <td valign="top" height="216">
+                        <table width="96%"
+                               align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td width="26%"><img
+                                        src="../static/image/zc_img.gif" vspace="7" width="77" height="77"
+                                        hspace="6"></td>
+                                <td valign="top" width="74%">
+                                    <table width="100%"
+                                           border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                        <tr>
+                                            <td class="text_12b" valign="bottom" align="left"
+                                                height="28">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-移动政策-<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-业务引导-<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-管理办法-<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-公共策略-
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+
+                            <tbody>
+                            <tr>
+                                <td class="text"
+                                    title="简讯：2008年12月，UCWEB发起的“业务合作方案”选验通过，进入实施。" align="left" height="20">·<a
+
+                                        href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=4&amp;url=/html/2009/3/16/20090316111636.html&amp;id=12371733960418738626"
+                                        target="_blank">简讯：2008年12月，UCWEB发...</a></td>
+                                <td class="text" align="left" height="20">2009-03-16</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" title="“伙伴携手共发展”竞赛活动积分规则"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=4&amp;url=/html/2008/12/2/20081202093801.html&amp;id=12266437013952863796"
+                                        target="_blank">“伙伴携手共发展”竞赛活动积分规则</a></td>
+                                <td class="text" align="left" height="20">2008-11-14</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" title="关于发布《移动梦网SP合作管理办法V4.0》的通知"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=4&amp;url=/html/2008/10/21/20081021093504.html&amp;id=12245529044373247998"
+                                        target="_blank">关于发布《移动梦网SP合作管理办法V...</a></td>
+                                <td class="text" align="left" height="20">2008-10-21</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0" cellpadding="0"
+                               cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table width="96%" align="center" border="0" cellpadding="0"
+       cellspacing="0">
+    <tbody>
+    <tr>
+        <td height="8"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="944" align="center" border="0" cellpadding="0"
+       cellspacing="0">
+    <tbody>
+    <tr>
+        <td width="54"><img src="../static/image/kjrk.gif" width="61"
+                            height="101"></td>
+        <td width="872" background="../static/image/kjrk_bg.gif">
+            <table
+                    width="870" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td align="center"><a
+                            href="../注册/hyzc_2.jsp.htm"><img
+                            src="../static/image/kj_01.gif" alt="提交资质申报" width="158" border="0"
+                            height="88"></a></td>
+                    <td align="center"><a
+                            href="../快捷入口-提交方案/合作资源把控管理平台.htm"><img
+                            src="../static/image/kj_02.gif" alt="提交方案" width="158" border="0"
+                            height="88"></a></td>
+                    <td align="center"><a
+                            href="../快捷入口-响应招募/合作资源把控管理平台.htm"><img
+                            src="../static/image/kj_03.gif" alt="响应招募" width="158" border="0"
+                            height="88"></a></td>
+                    <td align="center"><a
+                            href="http://www.hezuo100.com:8099/cmip/face/hzhb_2.jsp"><img
+                            src="../static/image/kj_04.gif" alt="反馈工单" width="158" border="0"
+                            height="88"></a></td>
+                    <td align="center"><a
+                            href="http://www.hezuo100.com:8099/cmip/face/jfly_2.jsp"><img
+                            src="../static/image/kj_05.gif" alt="积分查询" width="158" border="0"
+                            height="88"></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td width="18" align="right"><img src="../static/image/kjrk2.gif"
+                                          width="18" height="101"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="96%" align="center" border="0" cellpadding="0"
+       cellspacing="0">
+    <tbody>
+    <tr>
+        <td height="8"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="944" align="center" border="0" cellpadding="0"
+       cellspacing="0">
+    <tbody>
+    <tr>
+        <td valign="top" width="367" align="left">
+            <table width="359"
+                   border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td width="10" align="left"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_01.gif" width="8" height="30"></td>
+                    <td class="text_12bblue" width="338" align="left"
+                        background="../static/image/t_03.gif">
+                        <table width="97%" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td width="73%" align="left">积分排行<span
+                                        class="text_12byellow">TOP10</span></td>
+                                <td width="27%" align="right"><a
+                                        href="http://www.hezuo100.com:8099/cmip/face/jfly_2.jap" target="_blank"><img
+                                        src="../static/image/more.gif" alt="更多" width="23" border="0"
+                                        height="5"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="11" align="right"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_02.gif" width="8" height="30"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table_line" width="359" border="0" cellpadding="0"
+                   cellspacing="0">
+                <tbody>
+                <tr>
+                    <td valign="top" height="216">
+                        <table width="96%"
+                               align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+
+                            <tbody>
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_01.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span class="text_yellow"
+                                                                     title="广州易宝爱普讯电信科技有限公司111">广州易宝爱普讯电信科技有限公司111</span>
+                                </td>
+                                <td class="text" align="left" height="20">325</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_02.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span class="text_yellow" title="国通_合作伙伴">国通_合作伙伴</span>
+                                </td>
+                                <td class="text" align="left" height="20">325</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_03.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span class="text_yellow" title="北京新浪互联信息服务有限公司">北
+京新浪互联信息服务有限公司</span></td>
+                                <td class="text" align="left" height="20">210</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_04.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span title="北京搜狐互联网信息服务有限公司">北京搜狐互联网信息服务有限公司</span></td>
+                                <td class="text" align="left" height="20">190</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_05.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span title="珠江时报社">珠江时报社</span></td>
+                                <td class="text" align="left" height="20">180</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_06.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span title="广东南方都市报经营有限公司">广东南方都市报经营有限公司</span></td>
+                                <td class="text" align="left" height="20">170</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_07.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span title="深圳市华动飞天网络技术开发有限公司">深圳市华动飞天网络技术开发有限公司</span>
+                                </td>
+                                <td class="text" align="left" height="20">156</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_08.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span title="佛山珠江传媒集团股份有限公司（佛山电视台）">佛山珠江传媒集团股份有限公
+司（佛山电视台...</span></td>
+                                <td class="text" align="left" height="20">150</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_09.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span title="广州中惠信息技术有限公司">广州中惠信息技术有限公司</span></td>
+                                <td class="text" align="left" height="20">150</td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text" align="left" height="20"><img
+                                        src="../static/image/n_10.gif" width="13" align="absmiddle"
+                                        height="11" hspace="4"><span title="广州迈络信息科技有限公司">广州迈络信息科技有限公司</span></td>
+                                <td class="text" align="left" height="20">150</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0" cellpadding="0"
+                               cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td valign="top" width="367" align="left">
+            <table width="359"
+                   border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td width="10" align="left"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_01.gif" width="8" height="30"></td>
+                    <td class="text_12bblue" width="338" align="left"
+                        background="../static/image/t_03.gif">
+                        <table width="97%" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td width="73%" align="left">业务动态</td>
+                                <td width="27%" align="right"><a
+                                        href="http://www.hezuo100.com:8099/cmip/face/ywdt_list_2.jsp"
+                                        target="_blank"><img src="../static/image/more.gif" alt="更多"
+                                                             width="23" border="0" height="5"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="11" align="right"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_02.gif" width="8" height="30"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table_line" width="359" border="0" cellpadding="0"
+                   cellspacing="0">
+                <tbody>
+                <tr>
+                    <td valign="top" height="216">
+                        <table width="96%"
+                               align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td><img src="../static/image/dt.gif" width="338"
+                                         height="89"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+
+                            <tbody>
+                            <tr>
+                                <td class="text" title="3G发牌带来契机 “山寨手机”转正有多远?"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=3&amp;url=/html/2009/4/24/20090424092022.html&amp;id=12405360222281040802"
+                                        target="_blank">3G发牌带来契机 “山寨手机”转正...</a></td>
+                                <td class="text" align="left" height="20">2009-04-24</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="山寨启示录：正规军山寨化+山寨军正规化"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=3&amp;url=/html/2009/4/24/20090424091911.html&amp;id=12405359514789854578"
+                                        target="_blank">山寨启示录：正规军山寨化+山寨军正...</a></td>
+                                <td class="text" align="left" height="20">2009-04-24</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="空中网抢摊“她市场”" align="left"
+                                    height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=3&amp;url=/html/2009/4/24/20090424091658.html&amp;id=12405358189785178796"
+                                        target="_blank">空中网抢摊“她市场”</a></td>
+                                <td class="text" align="left" height="20">2009-04-24</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="雅虎将通过五个渠道推广手机网" align="left"
+                                    height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=3&amp;url=/html/2009/4/24/20090424091539.html&amp;id=12405357394780830194"
+                                        target="_blank">雅虎将通过五个渠道推广手机网</a></td>
+                                <td class="text" align="left" height="20">2009-04-24</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" title="TOM集团将推手机互联网一体化服务"
+                                    align="left" height="20">·<a
+                                        href="http://www.hezuo100.com:8099/cmip/face/news_show.jsp?look=3&amp;url=/html/2009/4/24/20090424091328.html&amp;id=12405356085414029348"
+                                        target="_blank">TOM集团将推手机互联网一体化服务</a></td>
+                                <td class="text" align="left" height="20">2009-04-24</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0" cellpadding="0"
+                               cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td valign="top" width="210" align="right">
+            <table width="210"
+                   align="center" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td width="10" align="left"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_01.gif" width="8" height="30"></td>
+                    <td class="text_12bblue" width="192" align="left"
+                        background="../static/image/t_03.gif">
+                        <table width="100%" border="0"
+                               cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td align="left">资料下载</td>
+                                <td align="right"><a
+                                        href="http://www.hezuo100.com:8099/cmip/face/zlxz_list_2.jsp"
+                                        target="_blank"><img src="../static/image/more.gif" alt="更多"
+                                                             width="23" border="0" height="5"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="10" align="right"
+                        background="../static/image/t_03.gif"><img
+                            src="../static/image/t_02.gif" width="8" height="30"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table_line" width="210" align="center" border="0"
+                   cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td valign="top" height="216">
+                        <table width="96%"
+                               align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0"
+                               cellpadding="0" cellspacing="0">
+
+
+                            <tbody>
+                            <tr>
+                                <td class="text" title="操作手册-合作伙伴" align="left"
+                                    height="20">·<a
+                                        href="http://www.hezuo100.com:8099/download?atchId=98078653862859497275">操
+                                    作手册-合作伙伴</a></td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                        <table width="96%" align="center" border="0" cellpadding="0"
+                               cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td height="8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table width="96%" align="center" border="0" cellpadding="0"
+       cellspacing="0">
+    <tbody>
+    <tr>
+        <td height="8"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="944" align="center" border="0" cellpadding="0"
+       cellspacing="0">
+    <tbody>
+    <tr>
+        <td class="text" width="419" align="center"
+            background="../static/image/bottom_bg.gif"><a
+                href="http://www.hezuo100.com:8099/cmip/face/about_us.jsp"
+                target="_blank">关于我们</a> | <a
+                href="http://www.hezuo100.com:8099/cmip/face/dh.jsp" target="_blank">网站导
+            航</a> | 服务热线10086
+        </td>
+        <td width="137"><img src="../static/image/bottom_logo.gif"
+                             width="193" height="44"></td>
+        <td class="text" width="388" align="center"
+            background="../static/image/bottom_bg.gif">中国移动通信版权所有
+        </td>
+    </tr>
+    </tbody>
+</table>
+<script type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+
+
+
+</script>
+<div style="position: absolute; display: none; z-index: 9999;"
+     id="livemargins_control"><img
+        src="../static/image/monitor-background-horizontal.png"
+        style="position: absolute; left: -77px; top: -5px;" width="77"
+        height="5"> <img src="../static/image/monitor-background-vertical.png"
+                         style="position: absolute; left: 0pt; top: -5px;"> <img
+        id="monitor-play-button" src="../static/image/monitor-play-button.png"
+        onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5"
+        style="position: absolute; left: 1px; top: 0pt; opacity: 0.5; cursor:
+pointer;"></div>
+</body>
+</html>  
